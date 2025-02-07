@@ -1,0 +1,89 @@
+<script>
+    let isList = ["It's Your Business", "It's Your Brand", "It's Your Passion", "It's Your Vision", "It's Your Dream", "It's Your Livelyhood", "It's Your Journey", "Get It Done Right"];
+    let index = 0;
+
+    function rotateText() {
+        const element = document.querySelector('.it-is');
+        if (!element) return;
+        element.textContent = isList[index];
+        if (isList[index] === "Get It Done Right") {
+            clearInterval(intervalId);
+        }
+        index = (index + 1) % isList.length;
+    }
+
+    const intervalId = setInterval(rotateText, 2000);
+
+</script>
+
+
+<div id="about" class = "about">
+    <h1 class = "not-code">It's Not Just Code</h1>
+    <h3 class = "it-is"></h3>
+
+    <div class = "info-boxes">
+    <div class="info-box">
+        <strong>Tailored Solutions:</strong><p>We dive deep into your unique needs to build custom solutions that align with your goals, not just generic code.</p>
+    </div>
+    
+    <div class="info-box">
+        <strong>Reliable Results:</strong> <p>We focus on clean, efficient development with a commitment to delivering projects on time—and beyond expectations.</p>
+    </div>
+    
+    <div class="info-box">
+        <strong>Your Success, Our Success:</strong><p>We’re passionate about turning your ideas into reality with transparent communication and innovative problem-solving.</p>
+    </div>
+</div>
+
+
+
+    
+</div>
+
+<style>
+    .not-code {
+        font-size: 3rem;
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .it-is {
+        font-size: 2rem;
+        margin: 0;
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .not-code, .it-is{
+        background: linear-gradient(135deg, #6a11cb, #003083);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .about {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        height: 90vh;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .info-box{
+        margin: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        background: #f5f5f5;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        max-width: 600px;
+    }
+    .info-box strong{
+        font-size: 1.5rem;
+    }
+    .info-boxes{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: row;
+    }
+    
+</style>

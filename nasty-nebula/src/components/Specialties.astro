@@ -1,0 +1,142 @@
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".card");
+        
+        function updateGradient(){
+            let flip = -1;
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const screenWidth = window.innerWidth;
+                const positionRatio = rect.left / screenWidth;
+                const gradientStart = Math.round(255 * positionRatio);
+                const gradientEnd = Math.round(255 * (1 - positionRatio));
+                card.style.background = `linear-gradient(135deg, rgb(${gradientStart}, 17, 203), rgb(37, 117, ${gradientEnd}))`;
+                flip *= -1;
+            })
+        }
+        window.addEventListener("resize", updateGradient);
+        updateGradient();
+    });
+</script>
+
+
+<div class = "skills">
+    <h1>Skills to Get the Job Done Right</h1>
+    <div class = "skills-cards">
+        <div class = "card-area">
+            <div class = "card">
+                <h1 class="title">Front-End</h1>
+                <button class="more-info">i</button>
+                <div class="popover">7+ Years experience in developing stunning websites</div>
+            </div>
+        </div>
+        <div class = "card-area">
+            <div class = "card">
+                <h1 class="title">Back-End</h1>
+                <button class="more-info">i</button>
+                <div class="popover">Masters of developing serverside functionality that make your project work</div>
+            </div>
+        </div>
+        <div class = "card-area">
+            <div class = "card">
+                <h1 class="title">Full-Stack</h1>
+                <button class="more-info">i</button>
+                <div class="popover">Building amazing and useful websites that connect to your preexisting functionality</div>
+            </div>
+        </div>
+        <div class = "card-area">
+            <div class = "card">
+                <h1 class="title">App Develpment</h1>
+                <button class="more-info">i</button>
+                <div class="popover">2 Years of developing stunning apps for any need</div>
+            </div>
+        </div>
+        <div class = "card-area">
+            <div class = "card">
+                <h1 class="title">Database Management</h1>
+                <button class="more-info">i</button>
+                <div class="popover">Store the data you need in the simplest and most effecient way possible!</div>
+            </div>
+        </div>
+        <div class = "card-area">
+            <div class = "card">
+                <h1 class="title">Video Games</h1>
+                <button class="more-info">i</button>
+                <div class="popover">From Godot to Roblox, we have experience making complex and stunning video games of any size.</div>
+            </div>
+        </div>
+    </div>
+    <h1>Passion to make sure it gets done your way</h1>
+</div>
+
+<style>
+    .skills{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color: black;
+        color: white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .skills-cards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .card-area {
+        margin: 20px;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    .title {
+        font-size: 2.5rem;
+        color: black;
+        text-align: center;
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .more-info {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    .popover {
+        display: none;
+        position: absolute;
+        top: 30px; /* Adjust as needed */
+        right: 10px; /* Adjust as needed */
+        background: white;
+        color: black;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .more-info:hover + .popover {
+        display: block;
+    }
+</style>
